@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="txtValue" onfocus="this.value=''" />
+    <input
+      type="button"
+      id="btnAdd"
+      value="Add"
+      onclick="add_element_to_array();"
+    />
+    <input
+      type="button"
+      id="btnDisplay"
+      value="Display"
+      onclick="display_array();"
+    />
+    <div id="result"></div>
+
+    <script>
+      let array = []
+
+      function add_element_to_array() {
+        let val = document.getElementById("txtValue").value
+        array.push(val)
+        alert(`Added complete number ${val}`)
+      }
+
+      function display_array() {
+        let e = "<hr/>"
+        for (let i = 0; i < array.length; i++) {
+          e += "Element " + i + " = " + array[i] + "<br/>"
+        }
+        document.getElementById("result").innerHTML = e
+      }
+    </script>
+  </body>
+</html>
